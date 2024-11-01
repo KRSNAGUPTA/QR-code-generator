@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 import { ToastContainer, toast } from "react-toast";
 
 function App() {
-  document.title = "Generate QR Code";
+  document.title = "QR Code Generator";
 
   const [value, setValue] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -29,8 +29,6 @@ function App() {
 
     if (urlPattern.test(value)) {
       try {
-        // Fetch the URL to validate it's accessible
-        await fetch(value);
         setIsUrl(true);
         toast.success("QR code generated");
       } catch (error) {
@@ -61,7 +59,6 @@ function App() {
             </div>
             {isUrl && (
               <div className="mt-4 w-full max-w-xs">
-                {/* Styled iframe for small-scale preview */}
                 <div className="relative w-full h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
                   <iframe
                     src={value}

@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 import { ToastContainer, toast } from "react-toast";
 
 function App() {
-  document.title = "QR Code Generator";
+  document.title = "Generate QR Code";
 
   const [value, setValue] = useState("");
   const [submitted, setSubmitted] = useState(false);

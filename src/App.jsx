@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import QRCode from "react-qr-code";
-import { ToastContainer, toast } from "react-toastify"; // Corrected import from 'react-toastify'
-import "react-toastify/dist/ReactToastify.css"; // Ensure toast styles are included
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   document.title = "QR Code Generator";
@@ -13,7 +13,7 @@ function App() {
     e.preventDefault();
     if (!value) {
       toast.error("A value is required");
-      return; // Early return to prevent further execution
+      return;
     }
     setSubmitted(true);
     toast.success("QR code generated");
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <div className="flex flex-col items-center bg-white p-8 rounded-lg shadow-lg space-y-6 w-full max-w-md">
+      <div className="flex flex-col items-center bg-white p-8 rounded-3xl shadow-2xl space-y-6 w-full max-w-md">
         <h1 className="text-3xl font-bold text-gray-800">QR Code Generator</h1>
 
         {submitted && value ? (
@@ -44,7 +44,7 @@ function App() {
             onChange={(e) => setValue(e.target.value)}
           />
           <button
-            className="bg-black text-white p-2 rounded-full border m-2 hover:bg-gray-200 hover:text-black hover:border-black transition transform duration-500 w-full"
+            className="bg-black text-white p-2 rounded-full border m-2 hover:bg-gray-200 hover:text-black hover:border-black transition duration-500 w-full transform hover:scale-105 active:scale-85"
             type="submit"
           >
             Get QR
